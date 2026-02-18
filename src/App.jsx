@@ -1,0 +1,249 @@
+// import './styles/App.css';
+import './styles/theme.css';
+import { motion } from 'motion/react';
+import { Typewriter } from './components/ui/Typewriter';
+import { ThemeToggle } from './components/ui/ThemeToggle';
+import { 
+  Github, 
+  Linkedin, 
+  Mail, 
+  ExternalLink, 
+  Code2, 
+  Cpu, 
+  Globe, 
+  Smartphone,
+  ChevronDown
+} from 'lucide-react';
+
+function App() {
+  const projects = [
+    {
+      title: "Receipt Scanner App",
+      description: "A full-stack headless commerce solution built with React and Node.js.",
+      tags: ["React", "Tailwind"],
+      icon: <Globe className="w-5 h-5" />
+    },
+    {
+      title: "AI Dashboard",
+      description: "Real-time data visualization for machine learning model monitoring.",
+      tags: ["Python", "D3.js"],
+      icon: <Cpu className="w-5 h-5" />
+    },
+    {
+      title: "Mobile Fitness App",
+      description: "Cross-platform mobile application for workout tracking and social sharing.",
+      tags: ["React Native", "Firebase"],
+      icon: <Smartphone className="w-5 h-5" />
+    }
+  ];
+  
+  return (
+    <>
+      <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary-foreground">
+        {/* Decorative Orbs */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+          <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full" />
+          <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-chart-3/10 blur-[120px] rounded-full" />
+        </div>
+
+        {/* NavBar */}
+         <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-border/50">
+  <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
+    {/* Logo - Left */}
+    <motion.div 
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      className="text-2xl font-black tracking-tighter"
+    >
+      HI<span className="text-primary">.</span>
+    </motion.div>
+    
+    {/* Nav Links - Centered */}
+    <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-10">
+      <a href="#work" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">WORK</a>
+      <a href="#about" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">ABOUT</a>
+      <a href="#contact" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">CONTACT</a>
+    </div>
+    
+    {/* Social Icons - Right */}
+    <div className="flex items-center gap-3">
+      <ThemeToggle />
+      <div className="h-8 w-[1px] bg-border/50 mx-2 hidden sm:block" />
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2.5 hover:bg-primary/5 rounded-2xl transition-all">
+        <Github className="w-5 h-5" />
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2.5 hover:bg-primary/5 rounded-2xl transition-all">
+        <Linkedin className="w-5 h-5" />
+      </a>
+    </div>
+  </div>
+</nav>
+{/* add the components first before ui */}
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-6 z-10 min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-widest mb-8 border border-pink-500/20">
+                <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
+                Open to collaborations
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] mb-8">
+                Hi, I'm <br />
+                <span className="text-pink-500 italic">Honeylene Insular</span>
+              </h1>
+                <div className="text-xl md:text-2xl font-medium text-muted-foreground/80 mb-10 min-h-[1.5em] flex items-center">
+                  Crafting&nbsp;
+                  <Typewriter 
+                    texts={[
+                      "aesthetic digital spaces.",
+                      "elegant user experiences.",
+                      "modern web interfaces.",
+                      "magical interactions."
+                    ]}
+                    className="text-primary font-bold"
+                    typingSpeed={60}
+                    deletingSpeed={30}
+                    delayBetweenTexts={3000}
+                  />
+                </div>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-12 leading-relaxed font-medium">
+                  I'm a software engineer who believes that powerful technology should also be beautiful and intuitive.
+                </p>
+                <div className="flex flex-wrap gap-5">
+                  <button className="px-10 py-4 bg-primary text-primary-foreground rounded-2xl font-bold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-primary/30">
+                    View My Work
+                  </button>
+                  <button className="px-10 py-4 bg-card text-foreground border-2 border-primary/20 rounded-2xl font-bold hover:bg-primary/5 transition-all">
+                    Let's Chat
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+         {/* Featured Work */}
+      <section id="work" className="py-32 bg-white/50 dark:bg-card/30 backdrop-blur-sm px-6 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+            <div>
+              <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Selected Works</span>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tightest">Curated Projects</h2>
+            </div>
+            <a href="#" className="inline-flex items-center gap-2 font-bold text-primary group transition-all">
+              Explore full gallery 
+              <motion.span whileHover={{ x: 5 }}>
+                <ExternalLink className="w-5 h-5" />
+              </motion.span>
+            </a>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group bg-card p-10 rounded-[2.5rem] border border-border/50 hover:border-primary/30 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 flex flex-col"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:rotate-6 transition-transform">
+                  {project.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4 tracking-tight">{project.title}</h3>
+                <p className="text-muted-foreground/80 mb-8 leading-relaxed font-medium">
+                  {project.description}
+                </p>
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-2.5 mb-8">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="text-xs py-1.5 px-3 bg-secondary text-secondary-foreground rounded-full font-bold uppercase tracking-wider">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <a href="#" className="inline-flex items-center gap-2 text-sm font-bold text-primary opacity-80 hover:opacity-100 transition-opacity">
+                    View Project <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack Banner */}
+      <section className="py-20 px-6 border-y border-border/50 bg-background/40 backdrop-blur-sm overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            animate={{ x: [0, -100, 0] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="flex justify-center gap-20 md:gap-40 items-center opacity-30 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-700"
+          >
+            {[
+              { icon: <Code2 />, label: "React" },
+              { icon: <Globe />, label: "JavaScript" },
+              { icon: <Cpu />, label: "Architecture" },
+              { icon: <Smartphone />, label: "Mobile" },
+              { icon: <Code2 />, label: "Design" }
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-4 whitespace-nowrap">
+                <span className="scale-150">{item.icon}</span>
+                <span className="text-2xl font-black uppercase tracking-tighter">{item.label}</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer / Contact */}
+      <footer id="contact" className="py-32 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-primary/5 rounded-[4rem] p-12 md:p-24 text-center border border-primary/10 backdrop-blur-sm overflow-hidden relative">
+            {/* Background Accent */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -mr-32 -mt-32" />
+            
+            <motion.h2 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="text-5xl md:text-8xl font-black tracking-tightest mb-10 leading-none"
+            >
+              Let's create something <span className="text-primary italic">iconic.</span>
+            </motion.h2>
+            <p className="text-xl md:text-2xl text-muted-foreground/80 mb-16 max-w-2xl mx-auto font-medium leading-relaxed">
+              Currently seeking new opportunities to build beautiful, meaningful digital experiences.
+            </p>
+            <a 
+              href="mailto:hello@janedoe.dev" 
+              className="inline-flex items-center gap-4 px-12 py-5 bg-primary text-primary-foreground rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-primary/30"
+            >
+              <Mail className="w-7 h-7" /> Work With Me
+            </a>
+            
+            <div className="mt-32 pt-16 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-10">
+              <div className="text-left">
+                <p className="text-2xl font-black tracking-tighter mb-2">JD<span className="text-primary">.</span></p>
+                <p className="text-sm font-medium text-muted-foreground">© 2026 Jane Doe. Developed with love & matcha.</p>
+              </div>
+              <div className="flex gap-10">
+                {['Twitter', 'GitHub', 'LinkedIn', 'Instagram'].map(social => (
+                  <a key={social} href="#" className="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">{social}</a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      </div>    
+    </>
+  )
+}
+
+export default App;
