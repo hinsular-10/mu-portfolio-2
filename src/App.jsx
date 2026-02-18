@@ -78,7 +78,7 @@ function App() {
     </div>
   </div>
 </nav>
-{/* add the components first before ui */}
+
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-6 z-10 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto w-full">
@@ -116,7 +116,7 @@ function App() {
                   I'm a software engineer who believes that powerful technology should also be beautiful and intuitive.
                 </p>
                 <div className="flex flex-wrap gap-5">
-                  <button className="px-10 py-4 bg-primary text-primary-foreground rounded-2xl font-bold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-primary/30">
+                  <button className="px-10 py-4 text-primary-foreground rounded-2xl font-bold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-primary/30">
                     View My Work
                   </button>
                   <button className="px-10 py-4 bg-card text-foreground border-2 border-primary/20 rounded-2xl font-bold hover:bg-primary/5 transition-all">
@@ -129,12 +129,17 @@ function App() {
         </section>
 
          {/* Featured Work */}
-      <section id="work" className="py-32 bg-white/50 dark:bg-card/30 backdrop-blur-sm px-6 relative overflow-hidden">
+         <section
+  id="work"
+  className="py-20 md:py-28 bg-white/50 dark:bg-card/30 backdrop-blur-sm px-6 md:px-12 relative overflow-hidden mb-0"
+>
+         
+      {/* <section id="work" className="py-16 bg-white/50 dark:bg-card/30 backdrop-blur-sm px-6 relative overflow-hidden"> */}
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
             <div>
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Selected Works</span>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tightest">Curated Projects</h2>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tightest">Featured Projects</h2>
             </div>
             <a href="#" className="inline-flex items-center gap-2 font-bold text-primary group transition-all">
               Explore full gallery 
@@ -221,7 +226,7 @@ function App() {
               Currently seeking new opportunities to build beautiful, meaningful digital experiences.
             </p>
             <a 
-              href="mailto:hello@janedoe.dev" 
+              href="mailto:insularhoneylene@gmail.com" 
               className="inline-flex items-center gap-4 px-12 py-5 bg-primary text-primary-foreground rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-primary/30"
             >
               <Mail className="w-7 h-7" /> Work With Me
