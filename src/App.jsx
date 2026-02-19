@@ -90,7 +90,7 @@ function App() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-widest mb-8 border border-pink-500/20">
-                <span className="w-2 h-6 rounded-full bg--500 animate-pulse" />
+                <span className="w-1 h-2 rounded-full bg--500 animate-pulse" />
                 Open to collaborations
               </div>
               
@@ -133,8 +133,12 @@ function App() {
          {/* Featured Work */}
          <section
   id="work"
-  className="min-h-[60vh] py-20 md:py-28 bg-[]/50 dark:bg-[#1a1014]/60 backdrop-blur-sm px-6 md:px-12 relative overflow-hidden mb-0"
+  className="min-h-[60vh] py-20 md:py-28 bg-[#ff74b1]/50 dark:bg-[#1a1014]/60 backdrop-blur-sm px-6 md:px-12 relative overflow-hidden mb-0"
 >
+  {/* <section
+  id="work"
+  className="min-h-[60vh] py-20 md:py-28 bg-[#FFF0F5] dark:bg-[] px-6 md:px-12 relative overflow-hidden mb-0"
+></section> */}
          
       {/* <section id="work" className="py-16 bg-white/50 dark:bg-card/30 backdrop-blur-sm px-6 relative overflow-hidden"> */}
         <div className="max-w-7xl mx-auto relative z-10">
@@ -215,7 +219,8 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="bg-primary/5 rounded-[4rem] p-12 md:p-24 text-center border border-primary/10 backdrop-blur-sm overflow-hidden relative">
             {/* Background Accent */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -mr-32 -mt-32" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF69B4]/50 blur-[100px] rounded-full -mr-32 -mt-32" />
+
             
             <motion.h2 
               initial={{ opacity: 0, scale: 0.9 }}
