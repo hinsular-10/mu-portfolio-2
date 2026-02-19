@@ -286,7 +286,9 @@ function App() {
               { icon: <Smartphone />, label: "Mobile" },
               { icon: <Code2 />, label: "Design" },
               { icon: <Globe />, label: "TypeScript" },
-              { icon: <Code2 />, label: "Cloud & DevOps" }
+              { icon: <Code2 />, label: "Cloud & DevOps" },
+              { icon: <Globe />, label: "Python" },
+              { icon: <Globe />, label: "Power Platform" }
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-4 whitespace-nowrap">
                 <span className="scale-150">{item.icon}</span>
