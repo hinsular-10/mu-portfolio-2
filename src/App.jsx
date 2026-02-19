@@ -19,22 +19,59 @@ function App() {
   const projects = [
     {
       title: "Receipt Scanner App",
-      description: "A full-stack headless comme0rce solution built with React and Node.js.",
-      tags: ["React", "Tailwind"],
+      description: "A full-stack app for scanning and extracting receipt data using OCR. Built with React for the frontend and Node.js for the backend.",
+      tags: ["React", "TailwindCss"],
       icon: <Globe className="w-5 h-5" />
     },
     {
-      title: "Language Exchange App",
-      description: "Real-time data visualization for machine learning model monitoring.",
+      title: "Image Classification",
+      description: "A real-time image classification tool using deep learning models. Built with Python and visualized with D3.js.",
       tags: ["Python", "D3.js"],
       icon: <Cpu className="w-5 h-5" />
     },
     {
-      title: "Mobile Fitness App",
-      description: "Cross-platform mobile application for workout tracking and social sharing.",
-      tags: ["React Native", "Firebase"],
+      title: "Language Exchange App",
+      description: "A cross-platform mobile app for language learning and practice, using React Native and Firebase for real-time features.",
+      tags: ["React Native", "Firebase", "Mobile App"],
       icon: <Smartphone className="w-5 h-5" />
     }
+  ];
+
+  const workExperience = [
+    {
+      jobTitle: 'Business Support Solutions Developer',
+      company: 'Ovintiv Inc.',
+      duration: 'October 2024 - December 2025',
+      description: 
+      <ul>
+        <li> Developed and deployed unattended RPA solutions within Dynamics 365 using Power Automate and Power Automate Desktop.</li>
+        <li> Integrated open-source RPA frameworks to enhance the automation solution’s performance and compliance, aligning with the organization’s scalable and secure development goals.</li>
+        <li> Applied Agile methodologies to deliver incremental improvements to business workflows, working closely with cross-functional teams across finance, operations, and IT to optimize system </li>
+        <li> Troubleshot and provided remote support for users, ensuring seamless cross-regional collaboration and operational efficiency.</li>
+      </ul>
+    },
+    {
+      jobTitle: 'Finance Solutions Developer',
+      company: 'Ovintiv Inc.',
+      duration: 'January 2024 - October 2024',
+      description: 
+      <ul>
+        <li> Migrated manual financial reporting workflows to automated low-code solutions using Power Platform, enhancing processing time by 30% and reducing the risk of human error.</li>
+        <li> Developed and deployed automated financial dashboards, providing real-time insights to business stakeholders and improving data accessibility for decision-making.</li>
+        <li> Performed performance evaluations on financial tools, ensuring scalability, reliability, and secure integration across various platforms. </li>
+      </ul>
+    },
+    {
+      jobTitle: 'Student Custom Development',
+      company: 'Ovintiv Inc.',
+      duration: 'January 2023 - October 2023',
+      description: 
+      <ul>
+        <li> Contributed to the modernization of enterprise software solutions using React, Node.js, and SQL Server in an Agile environment, improving internal productivity by 30%.</li>
+        <li> Developed and deployed CRUD applications to automate internal processes, improving workflow efficiency and service delivery for multiple departments.</li>
+        <li> Participated in Agile sprints, backlog grooming, and technical presentations, focusing on AI, cloud computing, and software best practices to support innovation and continuous improvement. </li>
+      </ul>
+    },
   ];
   
   return (
@@ -62,7 +99,7 @@ function App() {
     {/* Nav Links - Centered */}
     <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-10">
       <a href="#work" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">WORK</a>
-      <a href="#about" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">ABOUT</a>
+      <a href="#aboutme" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">ABOUT</a>
       <a href="#contact" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">CONTACT</a>
     </div>
     
@@ -73,7 +110,7 @@ function App() {
       <a href="https://github.com/hinsular-10" target="_blank" rel="noopener noreferrer" className="p-2.5 hover:bg-primary/5 rounded-2xl transition-all">
         <Github className="w-5 h-5" />
       </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2.5 hover:bg-primary/5 rounded-2xl transition-all">
+      <a href="https://ca.linkedin.com/in/honeylene-insular" target="_blank" rel="noopener noreferrer" className="p-2.5 hover:bg-primary/5 rounded-2xl transition-all">
         <Linkedin className="w-5 h-5" />
       </a>
     </div>
@@ -104,6 +141,10 @@ function App() {
                     texts={[
                       "aesthetic digital spaces.",
                       "elegant user experiences.",
+                      "scalable web applications.",
+                      "innovative AI-powered solutions.",
+                      "responsive user interfaces.",
+                      "secure and efficient business workflows.",
                       "modern web interfaces.",
                       "magical interactions."
                     ]}
@@ -121,7 +162,9 @@ function App() {
                   <button className="px-10 py-4 bg-[#FF69B4] text-white rounded-2xl font-bold hover:bg-[#FF1493] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-[#FF69B4]/30">
                     View My Work
                   </button>
-                  <button className="px-10 py-4 bg-card text-foreground border-2 border-primary/20 rounded-2xl font-bold hover:bg-primary/5 transition-all">
+                  <button 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-10 py-4 bg-card text-foreground border-2 border-primary/20 rounded-2xl font-bold hover:bg-primary/5 transition-all">
                     Let's Chat
                   </button>
                 </div>
@@ -131,21 +174,12 @@ function App() {
         </section>
 
          {/* Featured Work */}
-         <section
-  id="work"
-  className="min-h-[60vh] py-20 md:py-28 bg-[#ff74b1]/50 dark:bg-[#1a1014]/60 backdrop-blur-sm px-6 md:px-12 relative overflow-hidden mb-0"
->
-  {/* <section
-  id="work"
-  className="min-h-[60vh] py-20 md:py-28 bg-[#FFF0F5] dark:bg-[] px-6 md:px-12 relative overflow-hidden mb-0"
-></section> */}
-         
-      {/* <section id="work" className="py-16 bg-white/50 dark:bg-card/30 backdrop-blur-sm px-6 relative overflow-hidden"> */}
+         <section id="work" className="py-32  backdrop-blur-sm px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
             <div>
-              <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Selected Works</span>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tightest">Featured Projects</h2>
+              <span className="text-[#FF69B4] font-bold tracking-widest uppercase text-sm mb-4 block">Selected Works</span>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tightest">Project in the Works</h2>
             </div>
             <a href="#" className="inline-flex items-center gap-2 font-bold text-primary group transition-all">
               Explore full gallery 
@@ -190,6 +224,39 @@ function App() {
         </div>
       </section>
 
+      {/* About Me */}
+        <section id="aboutme" className="py-32 backdrop-blur-sm px-6 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+            <div>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tightest">Work History</h2>
+              <p className="text-muted-foreground/80 mt-4 max-w-lg leading-relaxed font-medium">
+                A journey through my professional experience, showcasing the roles and projects that have shaped my career.
+              </p>
+              <a href="src/assets/Honeylene-Insular-AI Program Full Stack Developer.pdf" download={"Resume_Honeylene_Insular.pdf"} className="inline-flex items-center gap-2 font-bold text-primary group transition-all">
+              Download Resume
+              <motion.span whileHover={{ x: 5 }}>
+                <ExternalLink className="w-5 h-5" />
+              </motion.span>
+            </a>
+            </div>
+
+    
+            {/* Work Experience List */}
+              <div className="space-y-12">
+                {workExperience.map((job, index) => (
+                  <div key={index} className="border-b border-border/50 pb-8">
+                    <h3 className="text-2xl font-bold">{job.jobTitle}</h3>
+                    <p className="text-lg font-semibold text-primary">{job.company}</p>
+                    <p className="text-sm text-muted-foreground/80">{job.duration}</p>
+                    <p className="text-muted-foreground/80 mt-4 leading-relaxed">{job.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
       {/* Tech Stack Banner */}
       <section className="py-20 px-6 border-y border-border/50 bg-background/40 backdrop-blur-sm overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -201,9 +268,11 @@ function App() {
             {[
               { icon: <Code2 />, label: "React" },
               { icon: <Globe />, label: "JavaScript" },
-              { icon: <Cpu />, label: "Architecture" },
+              { icon: <Cpu />, label: "AI & Automation" },
               { icon: <Smartphone />, label: "Mobile" },
-              { icon: <Code2 />, label: "Design" }
+              { icon: <Code2 />, label: "Design" },
+              { icon: <Globe />, label: "TypeScript" },
+              { icon: <Code2 />, label: "Cloud & DevOps" }
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-4 whitespace-nowrap">
                 <span className="scale-150">{item.icon}</span>
@@ -245,8 +314,20 @@ function App() {
                 <p className="text-sm font-medium text-muted-foreground">© 2026 Honeylene Insular. Developed with love & coffee.</p>
               </div>
               <div className="flex gap-10">
-                {['GitHub', 'LinkedIn', 'Medium'].map(social => (
-                  <a key={social} href="#" className="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">{social}</a>
+                {[
+                  { name: 'GitHub', url: 'https://github.com/hinsular-10' },
+                  { name: 'LinkedIn', url: 'https://ca.linkedin.com/in/honeylene-insular' },
+                  { name: 'Medium', url: 'https://medium.com/@honinsu' }
+                ].map(social => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank" // Opens the link in a new tab
+                    rel="noopener noreferrer" // Security best practice when using target="_blank"
+                    className="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                  >
+                    {social.name}
+                  </a>
                 ))}
               </div>
             </div>
