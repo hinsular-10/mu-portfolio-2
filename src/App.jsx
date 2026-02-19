@@ -15,6 +15,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 
+
 function App() {
   const projects = [
     {
@@ -135,7 +136,7 @@ function App() {
                 Hi, I'm <br />
                 <span className="text-pink-500 italic">Honeylene Insular</span>
               </h1>
-                <div className="text-xl md:text-2xl font-medium text-muted-foreground/80 mt-20 mb-20 min-h-[1.5em] flex items-center">
+                <div className="text-xl md:text-2xl font-medium text-muted-foreground/80 mt-20 mb-10 min-h-[1.5em] flex items-center">
                   Crafting&nbsp;
                   <Typewriter 
                     texts={[
@@ -155,13 +156,16 @@ function App() {
                   />
                 </div>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-12 leading-relaxed font-medium">
-                  I'm a software engineer who believes that powerful technology should also be beautiful and intuitive.
+                  I’m a full-stack software engineer skilled in React, TypeScript, and Node.js, focused on building secure, scalable AI-powered applications with an emphasis on efficiency and best practices.
                 </p>
                 <div className="flex flex-wrap gap-5">
       
-                  <button className="px-10 py-4 bg-[#FF69B4] text-white rounded-2xl font-bold hover:bg-[#FF1493] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-[#FF69B4]/30">
+                  <button
+                  onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })} 
+                  className="px-10 py-4 bg-[#FF69B4] text-white rounded-2xl font-bold hover:bg-[#FF1493] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-[#FF69B4]/30">
                     View My Work
                   </button>
+
                   <button 
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="px-10 py-4 bg-card text-foreground border-2 border-primary/20 rounded-2xl font-bold hover:bg-primary/5 transition-all">
@@ -169,6 +173,16 @@ function App() {
                   </button>
                 </div>
               </motion.div>
+
+              {/* Image Section */}
+              <div className='hidden lg:block'>
+                <img 
+                  src="src/assets/Lene.jpg"
+                  alt="Profile"
+                  className='w-full h-auto rounded-xl shadow-xl'
+                
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -179,7 +193,7 @@ function App() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
             <div>
               <span className="text-[#FF69B4] font-bold tracking-widest uppercase text-sm mb-4 block">Selected Works</span>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tightest">Project in the Works</h2>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tightest">Projects in the Works</h2>
             </div>
             <a href="#" className="inline-flex items-center gap-2 font-bold text-primary group transition-all">
               Explore full gallery 
