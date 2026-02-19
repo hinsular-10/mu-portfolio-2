@@ -19,12 +19,12 @@ function App() {
   const projects = [
     {
       title: "Receipt Scanner App",
-      description: "A full-stack headless commerce solution built with React and Node.js.",
+      description: "A full-stack headless comme0rce solution built with React and Node.js.",
       tags: ["React", "Tailwind"],
       icon: <Globe className="w-5 h-5" />
     },
     {
-      title: "AI Dashboard",
+      title: "Language Exchange App",
       description: "Real-time data visualization for machine learning model monitoring.",
       tags: ["Python", "D3.js"],
       icon: <Cpu className="w-5 h-5" />
@@ -39,7 +39,8 @@ function App() {
   
   return (
     <>
-      <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary-foreground">
+      <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary-foreground w-full">
+      
         {/* Decorative Orbs */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
           <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full" />
@@ -48,7 +49,7 @@ function App() {
 
         {/* NavBar */}
          <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-border/50">
-  <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
+  <div className="max-w-6xl mx-auto px-8 h-20 flex items-center justify-between relative w-full">
     {/* Logo - Left */}
     <motion.div 
       initial={{ opacity: 0, x: -20 }}
@@ -69,7 +70,7 @@ function App() {
     <div className="flex items-center gap-3">
       <ThemeToggle />
       <div className="h-8 w-[1px] bg-border/50 mx-2 hidden sm:block" />
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2.5 hover:bg-primary/5 rounded-2xl transition-all">
+      <a href="https://github.com/hinsular-10" target="_blank" rel="noopener noreferrer" className="p-2.5 hover:bg-primary/5 rounded-2xl transition-all">
         <Github className="w-5 h-5" />
       </a>
       <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2.5 hover:bg-primary/5 rounded-2xl transition-all">
@@ -89,7 +90,7 @@ function App() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-widest mb-8 border border-pink-500/20">
-                <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
+                <span className="w-2 h-6 rounded-full bg--500 animate-pulse" />
                 Open to collaborations
               </div>
               
@@ -97,7 +98,7 @@ function App() {
                 Hi, I'm <br />
                 <span className="text-pink-500 italic">Honeylene Insular</span>
               </h1>
-                <div className="text-xl md:text-2xl font-medium text-muted-foreground/80 mb-10 min-h-[1.5em] flex items-center">
+                <div className="text-xl md:text-2xl font-medium text-muted-foreground/80 mt-20 mb-20 min-h-[1.5em] flex items-center">
                   Crafting&nbsp;
                   <Typewriter 
                     texts={[
@@ -106,7 +107,7 @@ function App() {
                       "modern web interfaces.",
                       "magical interactions."
                     ]}
-                    className="text-primary font-bold"
+                    className="text-pink-500 font-bold"
                     typingSpeed={60}
                     deletingSpeed={30}
                     delayBetweenTexts={3000}
@@ -116,7 +117,8 @@ function App() {
                   I'm a software engineer who believes that powerful technology should also be beautiful and intuitive.
                 </p>
                 <div className="flex flex-wrap gap-5">
-                  <button className="px-10 py-4 text-primary-foreground rounded-2xl font-bold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-primary/30">
+      
+                  <button className="px-10 py-4 bg-[#FF69B4] text-white rounded-2xl font-bold hover:bg-[#FF1493] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-[#FF69B4]/30">
                     View My Work
                   </button>
                   <button className="px-10 py-4 bg-card text-foreground border-2 border-primary/20 rounded-2xl font-bold hover:bg-primary/5 transition-all">
@@ -131,7 +133,7 @@ function App() {
          {/* Featured Work */}
          <section
   id="work"
-  className="py-20 md:py-28 bg-white/50 dark:bg-card/30 backdrop-blur-sm px-6 md:px-12 relative overflow-hidden mb-0"
+  className="min-h-[60vh] py-20 md:py-28 bg-[]/50 dark:bg-[#1a1014]/60 backdrop-blur-sm px-6 md:px-12 relative overflow-hidden mb-0"
 >
          
       {/* <section id="work" className="py-16 bg-white/50 dark:bg-card/30 backdrop-blur-sm px-6 relative overflow-hidden"> */}
@@ -222,7 +224,7 @@ function App() {
             >
               Let's create something <span className="text-primary italic">iconic.</span>
             </motion.h2>
-            <p className="text-xl md:text-2xl text-muted-foreground/80 mb-16 max-w-2xl mx-auto font-medium leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground/80 mb-16 max-w-2xl mx-auto font-medium leading-relaxed text-center">
               Currently seeking new opportunities to build beautiful, meaningful digital experiences.
             </p>
             <a 
@@ -234,11 +236,11 @@ function App() {
             
             <div className="mt-32 pt-16 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-10">
               <div className="text-left">
-                <p className="text-2xl font-black tracking-tighter mb-2">JD<span className="text-primary">.</span></p>
-                <p className="text-sm font-medium text-muted-foreground">© 2026 Jane Doe. Developed with love & matcha.</p>
+                <p className="text-2xl font-black tracking-tighter mb-2">HI<span className="text-primary">.</span></p>
+                <p className="text-sm font-medium text-muted-foreground">© 2026 Honeylene Insular. Developed with love & coffee.</p>
               </div>
               <div className="flex gap-10">
-                {['Twitter', 'GitHub', 'LinkedIn', 'Instagram'].map(social => (
+                {['GitHub', 'LinkedIn', 'Medium'].map(social => (
                   <a key={social} href="#" className="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">{social}</a>
                 ))}
               </div>
