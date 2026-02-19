@@ -4,19 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
-body {
+/* body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -42,18 +42,26 @@ a:hover {
   color: #ff64ea;
 }
 
-body {
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
-h1 {
+/* body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+/* h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
+} */
 
 button {
   border-radius: 8px;
@@ -62,7 +70,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  /* background-color: primary; */
+  background-color: primary;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -74,15 +82,29 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* @media (prefers-color-scheme: light) { */
-  /* :root {
-    color: #213547;
-    background-color: #ffffff;
-  } */
-  /* a:hover {
-    color: #747bff;
-  } */
-  /* button {
+@media (prefers-color-scheme: light) {
+   :root {
+    color: #FF69B4;
+    background-color: #b34ab3;
+  } 
+   a:hover {
+    color: #310062;
+  } 
+   button {
     background-color: #bb5aa3;
-  } */
-/* } */
+  } 
+ }
+
+ .bullet-point {
+  position: relative;
+  padding-left: 20px;
+}
+
+.bullet-point::before {
+  content: '•'; 
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FF69B4;  
+  font-size: 20px;
+}
