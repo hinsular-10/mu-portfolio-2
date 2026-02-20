@@ -5,13 +5,14 @@ import react from '@vitejs/plugin-react'
 // import { base } from 'motion/react-client'
 
 export default defineConfig({
-  base: '/mu-portfolio-2/',
+  //  base: process.env.NODE_ENV === 'production' ? '/mu-portfolio-2/' : '/',
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
     // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
   ],
+    base: '/mu-portfolio-2/',
   resolve: {
     alias: {
       // Alias @ to the src directory
