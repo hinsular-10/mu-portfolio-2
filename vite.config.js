@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-import { base } from 'motion/react-client'
+// import { base } from 'motion/react-client'
 
 export default defineConfig({
   base: '/mu-portfolio-2/',
@@ -15,7 +15,6 @@ export default defineConfig({
   resolve: {
     alias: {
       // Alias @ to the src directory
-      '@': path.resolve(__dirname, './src'),
     },
   },
 
