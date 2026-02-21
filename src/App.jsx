@@ -14,6 +14,8 @@ import {
   Smartphone,
   ChevronDown
 } from 'lucide-react';
+import profilePhoto from './assets/Lene.jpg';
+import Resume from './assets/Honeylene-Insular-CV.pdf';
 
 
 function App() {
@@ -177,7 +179,7 @@ function App() {
               {/* Image Section */}
               <div className='hidden lg:block'>
                 <img 
-                  src="src/assets/Lene.jpg"
+                  src={profilePhoto}
                   alt="Profile"
                   className='w-full h-auto rounded-xl shadow-xl'
                 
@@ -247,8 +249,8 @@ function App() {
               <p className="text-muted-foreground/80 mt-4 max-w-lg leading-relaxed font-medium">
                 A journey through my professional experience, showcasing the roles and projects that have shaped my career.
               </p>
-              <a href="src/assets/Honeylene-Insular-AI Program Full Stack Developer.pdf" download={"Resume_Honeylene_Insular.pdf"} className="inline-flex items-center gap-2 font-bold text-primary group transition-all">
-              Download Resume
+              <a href= {Resume} download="Resume_Honeylene_Insular.pdf" className="inline-flex items-center gap-2 font-bold text-primary group transition-all">
+              Download CV
               <motion.span whileHover={{ x: 5 }}>
                 <ExternalLink className="w-5 h-5" />
               </motion.span>

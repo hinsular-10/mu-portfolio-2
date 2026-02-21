@@ -12,7 +12,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-    base: '/mu-portfolio-2/',
+    // base: '/mu-portfolio-2/',
+    base: "/",
   resolve: {
     alias: {
       // Alias @ to the src directory
