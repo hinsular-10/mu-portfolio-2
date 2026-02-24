@@ -278,7 +278,7 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <motion.div 
             animate={{ x: [0, -100, 0] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
             className="flex justify-center gap-20 md:gap-40 items-center opacity-30 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-700"
           >
             {[
